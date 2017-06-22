@@ -23,4 +23,4 @@ response, data = client.request(timeline_endpoint)
 tweets = json.loads(data)
 my_gen = (item for item in tweets if item[u'text'].find('you') > -1)
 for item in my_gen:
-    print item[u'text'] + '\n'
+    print item[u'user'][u'screen_name'] + ': ' + item[u'text'] + '\n'
